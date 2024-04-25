@@ -6,7 +6,6 @@ import Stats from "./Stats";
 import { useCabin } from "../cabins/useCabin";
 import SalesChart from "./SalesChart";
 import DurationChart from "./DurationChart";
-import Today from "../check-in-out/TodayActivity";
 import TodayActivity from "../check-in-out/TodayActivity";
 
 const StyledDashboardLayout = styled.div`
@@ -18,7 +17,7 @@ const StyledDashboardLayout = styled.div`
 
 function DashboardLayout() {
   const { isLoading: isLoading1, bookings, numDays } = useRecentBookings();
-  const { isLoading: isLoading2, stays, confirmedStays } = useRecentStays();
+  const { isLoading: isLoading2, confirmedStays } = useRecentStays();
   const { cabins, isLoading: isLoading3 } = useCabin();
 
   if (isLoading1 || isLoading2 || isLoading3) return <Spinner />;

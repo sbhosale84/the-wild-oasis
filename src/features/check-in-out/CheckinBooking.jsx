@@ -34,7 +34,7 @@ function CheckinBooking() {
   useEffect(() => {
     setConfirmPaid(booking?.isPaid || false);
   }, [booking]);
-  const { settings, error, isLoading: isSettingLoading } = useSettings();
+  const { settings, isLoading: isSettingLoading } = useSettings();
   console.log(settings);
   const moveBack = useMoveBack();
 
